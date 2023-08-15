@@ -16,7 +16,6 @@ hardware_interface:
     - wrist_2_joint
     - wrist_3_joint
     - hande_left_finger_joint
-    - hande_right_finger_joint
   sim_control_mode: 1  # 0: position, 1: velocity
 # Publish all joint states
 # Creates the /joint_states topic necessary in ROS
@@ -25,7 +24,6 @@ hardware_interface:
 #   publish_rate: 50
 controller_list:
   - name: "scaled_pos_joint_traj_controller"
-    # name: ur5e_arm_controller
     action_ns: follow_joint_trajectory
     default: True
     type: FollowJointTrajectory
@@ -42,4 +40,3 @@ controller_list:
     type: FollowJointTrajectory
     joints:
       - hande_left_finger_joint
-      - hande_right_finger_joint
